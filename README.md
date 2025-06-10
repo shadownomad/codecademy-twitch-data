@@ -11,4 +11,3 @@ This is the final project for the Analyze Data with SQL skill path by [CodeCadem
 * This README
 * The Questions and answers in analysis.md
 * My queries in queries.sql
-* the raw data tables, chat.csv and streams.csv
