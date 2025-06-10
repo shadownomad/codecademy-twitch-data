@@ -67,7 +67,7 @@ LIMIT 10;
 
 --9 
 SELECT time,
-  strftime('%S',time) --displays only the seconds
+  strftime('%S',time) 
 FROM stream
 GROUP BY 1
 LIMIT 20;
@@ -83,7 +83,7 @@ GROUP BY 1;
 --11
 SELECT * 
 FROM stream s
-LEFT JOIN chat c
+JOIN chat c
   ON s.device_id = c.device_id
 LIMIT 10;
 
@@ -92,7 +92,7 @@ LIMIT 10;
 --12.1 What are your favorite games? Can you find some insights about its viewers and chat room users?
 -- shows what where WoT content is most watched
 SELECT country,
-  COUNT(*)
+  COUNT(*) AS 'stream_count'
 FROM stream
 WHERE game = 'World of Tanks'
 GROUP BY 1
@@ -104,7 +104,7 @@ SELECT s.game,
   COUNT(c.device_id) AS 'chat_count',
   COUNT(s.device_id) AS 'stream_count'
 FROM stream s
- JOIN chat c 
+LEFT JOIN chat c 
 ON s.device_id = c.device_id
 GROUP BY 1
 ORDER BY 3 Desc;
